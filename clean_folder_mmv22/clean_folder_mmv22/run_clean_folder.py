@@ -1,4 +1,5 @@
 from pathlib import Path
+from colorama import Fore, init, deinit
 import shutil, sys
 
 import clean_folder_mmv22.file_parser as parser
@@ -107,7 +108,11 @@ def files_runner(folder: Path):
 
 def run():
     if len(sys.argv) != 2:
-        print("The first argument of the script -\nis the name of directory,\nwhich we need to make a order.")
+        init()
+        print(Fore.YELLOW + "The first argument of the script -\n" + \
+              Fore.RED + "is the name of directory,\n" + \
+              Fore.YELLOW + "which we need to make a order.")
+        deinit()
         quit()
     else:
         folder_for_scan = Path(sys.argv[1])
