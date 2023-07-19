@@ -2,7 +2,7 @@ from pathlib import Path
 import shutil, sys
 
 import clean_folder_mmv22.file_parser as parser
-import clean_folder_mmv22.normalize as normalize
+from clean_folder_mmv22.normalize import normalize
 
 
 def handle_defined(filename: Path, target_folder: Path) -> None:
